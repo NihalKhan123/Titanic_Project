@@ -1,9 +1,10 @@
 import streamlit as st
-import joblib
+import pickle
 import numpy as np
 
-# Load your trained model
-model = joblib.load('model.pkl')
+# Load your trained model using pickle
+with open('model.pkl', 'rb') as f:
+    model = pickle.load(f)
 
 # Create the Streamlit app layout
 st.title("Model Prediction App")
